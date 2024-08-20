@@ -321,8 +321,7 @@ const HomePage = ({ params: param }: { params: { id: string } }) => {
           newElem.innerHTML = `<video id="${remoteProducerId}" autoplay class="video"></video>`;
         }
         document.getElementById("videoContainer")?.appendChild(newElem);
-        const x = document.getElementById(remoteProducerId);
-        console.log("xxx", x);
+        //@ts-ignore
         document.getElementById(remoteProducerId)!.srcObject = new MediaStream([
           newConsumer.track,
         ]);
@@ -339,7 +338,7 @@ const HomePage = ({ params: param }: { params: { id: string } }) => {
       producerIds.forEach(signalNewConsumerTransport);
     });
   };
-
+  console.log({ consumerTransports });
   return (
     <div>
       <h1>{roomName}</h1>

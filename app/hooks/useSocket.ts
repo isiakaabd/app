@@ -4,11 +4,10 @@ import io, { Socket } from "socket.io-client";
 
 const useSocket = (): Socket | null => {
   const [socket, setSocket] = useState<Socket | null>(null);
-  console.log(process, "DDDDD");
 
   useEffect(() => {
     // Create and configure the socket instance
-    const socketInstance = io(process.env.URL ?? ""); //"https://mediasoup-demo-server.onrender.com"
+    const socketInstance = io("https://localhost:5000"); //"https://mediasoup-demo-server.onrender.com"
 
     // Define the event handlers
     const onConnect = () => {

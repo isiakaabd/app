@@ -4,9 +4,9 @@
   "private": true,
   "type":"module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node server2.js --experimental-https",
+    "build": "next build && node server2.js --experimental-https",
+    "start": "next start && node server2.js --experimental-https",
     "lint": "next lint"
   },
   "dependencies": {
